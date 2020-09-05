@@ -10,7 +10,7 @@ let arena = new Arena();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/api/sites', function(req, res){
-  arena.channel('scoby').get({ page: req.query.page ? req.query.page : 1, per: 64,
+  arena.channel('kinoko').get({ page: req.query.page ? req.query.page : 1, per: 64,
     direction: 'desc',
     sort: 'position'
    })
@@ -21,7 +21,7 @@ app.get('/api/sites', function(req, res){
 })
 
 app.get('/api/:site', function(req, res){
-  // add search params for page, eg /api/scoby?page=2
+  // add search params for page, eg /api/kinoko?page=2
   // ------------------------------------------------
   // its an art to find the perfect balance between
   // amount of blocks to return per request and the
